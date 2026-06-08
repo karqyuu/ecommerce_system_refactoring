@@ -1,0 +1,52 @@
+\doxysection{payment\+\_\+strategy.\+h}
+\hypertarget{payment__strategy_8h_source}{}\label{payment__strategy_8h_source}\index{include/payment\_strategy.h@{include/payment\_strategy.h}}
+\doxymbox{\hyperlink{payment__strategy_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classpayment__strategy}{payment\_strategy}}\ }
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classpayment__strategy_a1d0eaaf13e4829bf2300d7c03547a081}{process\_payment}}(\textcolor{keywordtype}{double}\ amount)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{virtual}\ \doxymbox{\hyperlink{classpayment__strategy_ad928ba58a3071c655ebc43ec924f10e2}{\string~payment\_strategy}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classcredit__card__payment}{credit\_card\_payment}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{classpayment__strategy}{payment\_strategy}}\ }
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classcredit__card__payment_a54fb433e6821840dc76eb20d11f68c36}{process\_payment}}(\textcolor{keywordtype}{double}\ amount)\textcolor{keyword}{\ const\ override\ }}
+\DoxyCodeLine{00032\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Connecting\ to\ banking\ gateway...\(\backslash\)n"{}};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Payment\ of\ "{}}\ <<\ amount\ <<\ \textcolor{stringliteral}{"{}\ UAH\ via\ credit\ card\ successful.\(\backslash\)n"{}};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classpaypal__payment}{paypal\_payment}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{classpayment__strategy}{payment\_strategy}}\ }
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classpaypal__payment_a6c072fb400b099075ab798eef25a2426}{process\_payment}}(\textcolor{keywordtype}{double}\ amount)\textcolor{keyword}{\ const\ override\ }}
+\DoxyCodeLine{00048\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Redirecting\ to\ PayPal...\(\backslash\)n"{}};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Payment\ of\ "{}}\ <<\ amount\ <<\ \textcolor{stringliteral}{"{}\ UAH\ via\ PayPal\ successful.\(\backslash\)n"{}};}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classcash__payment}{cash\_payment}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{classpayment__strategy}{payment\_strategy}}\ }
+\DoxyCodeLine{00060\ \{}
+\DoxyCodeLine{00061\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classcash__payment_a2bc0f15f40d1f8e04ba0f9db98374671}{process\_payment}}(\textcolor{keywordtype}{double}\ amount)\textcolor{keyword}{\ const\ override\ }}
+\DoxyCodeLine{00063\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Cash\ payment.\ Prepare\ exact\ change\ for\ the\ courier.\(\backslash\)n"{}};}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,65 @@
+\doxysection{paypal\+\_\+payment Class Reference}
+\hypertarget{classpaypal__payment}{}\label{classpaypal__payment}\index{paypal\_payment@{paypal\_payment}}
+
+
+Pay\+Pal payment strategy. Simulates redirection to the payment system page.  
+
+
+
+
+{\ttfamily \+\#include $<$payment\+\_\+strategy.\+h$>$}
+
+Inheritance diagram for paypal\+\_\+payment:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpaypal__payment}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{classpaypal__payment_a6c072fb400b099075ab798eef25a2426}{process\+\_\+payment}} (double amount) const override
+\begin{DoxyCompactList}\small\item\em Processes a transaction for the specified amount. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{classpayment__strategy}{payment\+\_\+strategy}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \doxymbox{\hyperlink{classpayment__strategy_ad928ba58a3071c655ebc43ec924f10e2}{\texorpdfstring{$\sim$}{\string~}payment\+\_\+strategy}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Pay\+Pal payment strategy. Simulates redirection to the payment system page. 
+
+\label{classpaypal__payment_doc-func-members}
+\Hypertarget{classpaypal__payment_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classpaypal__payment_a6c072fb400b099075ab798eef25a2426}\index{paypal\_payment@{paypal\_payment}!process\_payment@{process\_payment}}
+\index{process\_payment@{process\_payment}!paypal\_payment@{paypal\_payment}}
+\doxysubsubsection{\texorpdfstring{process\_payment()}{process\_payment()}}
+{\footnotesize\ttfamily \label{classpaypal__payment_a6c072fb400b099075ab798eef25a2426} 
+bool paypal\+\_\+payment::\+process\+\_\+payment (\begin{DoxyParamCaption}\item[{double}]{amount}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Processes a transaction for the specified amount. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em amount} & Final amount to pay. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the payment was successful, false otherwise. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}
+
+Implements \doxymbox{\hyperlink{classpayment__strategy_a1d0eaaf13e4829bf2300d7c03547a081}{payment\+\_\+strategy}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+include/\+\doxymbox{\hyperlink{payment__strategy_8h}{payment\+\_\+strategy.\+h}}\end{DoxyCompactItemize}

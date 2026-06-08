@@ -1,0 +1,78 @@
+\doxysection{discount\+\_\+strategy Class Reference}
+\hypertarget{classdiscount__strategy}{}\label{classdiscount__strategy}\index{discount\_strategy@{discount\_strategy}}
+
+
+Base interface for discount calculation algorithms.  
+
+
+
+
+{\ttfamily \+\#include $<$discount\+\_\+strategy.\+h$>$}
+
+Inheritance diagram for discount\+\_\+strategy:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdiscount__strategy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual double \doxymbox{\hyperlink{classdiscount__strategy_aba08e815c946c9fe16225eb31522e297}{calculate\+\_\+discount}} (double total\+\_\+amount) const =0
+\begin{DoxyCompactList}\small\item\em Calculates the discount amount based on the total cost. \end{DoxyCompactList}\item 
+virtual \doxymbox{\hyperlink{classdiscount__strategy_a286a4fc088591c1a143863c706fbd745}{\texorpdfstring{$\sim$}{\string~}discount\+\_\+strategy}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base interface for discount calculation algorithms. 
+
+
+\begin{DoxyItemize}
+\item This interface implements the Strategy pattern, allowing dynamic changes to the discount logic without modifying the core processor code. 
+\end{DoxyItemize}
+
+\label{classdiscount__strategy_doc-constructors}
+\Hypertarget{classdiscount__strategy_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classdiscount__strategy_a286a4fc088591c1a143863c706fbd745}\index{discount\_strategy@{discount\_strategy}!````~discount\_strategy@{\texorpdfstring{$\sim$}{\string~}discount\_strategy}}
+\index{````~discount\_strategy@{\texorpdfstring{$\sim$}{\string~}discount\_strategy}!discount\_strategy@{discount\_strategy}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}discount\_strategy()}{\string~discount\_strategy()}}
+{\footnotesize\ttfamily \label{classdiscount__strategy_a286a4fc088591c1a143863c706fbd745} 
+virtual discount\+\_\+strategy::\+\texorpdfstring{$\sim$}{\string~}discount\+\_\+strategy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{classdiscount__strategy_doc-func-members}
+\Hypertarget{classdiscount__strategy_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdiscount__strategy_aba08e815c946c9fe16225eb31522e297}\index{discount\_strategy@{discount\_strategy}!calculate\_discount@{calculate\_discount}}
+\index{calculate\_discount@{calculate\_discount}!discount\_strategy@{discount\_strategy}}
+\doxysubsubsection{\texorpdfstring{calculate\_discount()}{calculate\_discount()}}
+{\footnotesize\ttfamily \label{classdiscount__strategy_aba08e815c946c9fe16225eb31522e297} 
+virtual double discount\+\_\+strategy::\+calculate\+\_\+discount (\begin{DoxyParamCaption}\item[{double}]{total\+\_\+amount}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Calculates the discount amount based on the total cost. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em total\+\_\+amount} & Total order amount before discounts. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Discount amount (double). 
+\end{DoxyReturn}
+
+\end{DoxyItemize}
+
+Implemented in \doxymbox{\hyperlink{classregular__discount_a62a5502902c0ff896d9a210259b2e08e}{regular\+\_\+discount}}, \doxymbox{\hyperlink{classstudent__discount_ab80d609cbb7951f1cbd8411c0b88c7cd}{student\+\_\+discount}}, and \doxymbox{\hyperlink{classvip__discount_aa675cf91db04a90098d0f6b1dca74d13}{vip\+\_\+discount}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+include/\+\doxymbox{\hyperlink{discount__strategy_8h}{discount\+\_\+strategy.\+h}}\end{DoxyCompactItemize}

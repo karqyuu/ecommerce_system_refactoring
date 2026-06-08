@@ -1,0 +1,65 @@
+\doxysection{regular\+\_\+discount Class Reference}
+\hypertarget{classregular__discount}{}\label{classregular__discount}\index{regular\_discount@{regular\_discount}}
+
+
+Discount strategy for regular customers. Provides a 5\% discount only if the order amount exceeds 1000.  
+
+
+
+
+{\ttfamily \+\#include $<$discount\+\_\+strategy.\+h$>$}
+
+Inheritance diagram for regular\+\_\+discount:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classregular__discount}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \doxymbox{\hyperlink{classregular__discount_a62a5502902c0ff896d9a210259b2e08e}{calculate\+\_\+discount}} (double total\+\_\+amount) const override
+\begin{DoxyCompactList}\small\item\em Calculates the discount amount based on the total cost. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{classdiscount__strategy}{discount\+\_\+strategy}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \doxymbox{\hyperlink{classdiscount__strategy_a286a4fc088591c1a143863c706fbd745}{\texorpdfstring{$\sim$}{\string~}discount\+\_\+strategy}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Discount strategy for regular customers. Provides a 5\% discount only if the order amount exceeds 1000. 
+
+\label{classregular__discount_doc-func-members}
+\Hypertarget{classregular__discount_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classregular__discount_a62a5502902c0ff896d9a210259b2e08e}\index{regular\_discount@{regular\_discount}!calculate\_discount@{calculate\_discount}}
+\index{calculate\_discount@{calculate\_discount}!regular\_discount@{regular\_discount}}
+\doxysubsubsection{\texorpdfstring{calculate\_discount()}{calculate\_discount()}}
+{\footnotesize\ttfamily \label{classregular__discount_a62a5502902c0ff896d9a210259b2e08e} 
+double regular\+\_\+discount::\+calculate\+\_\+discount (\begin{DoxyParamCaption}\item[{double}]{total\+\_\+amount}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Calculates the discount amount based on the total cost. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em total\+\_\+amount} & Total order amount before discounts. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Discount amount (double). 
+\end{DoxyReturn}
+
+\end{DoxyItemize}
+
+Implements \doxymbox{\hyperlink{classdiscount__strategy_aba08e815c946c9fe16225eb31522e297}{discount\+\_\+strategy}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+include/\+\doxymbox{\hyperlink{discount__strategy_8h}{discount\+\_\+strategy.\+h}}\end{DoxyCompactItemize}

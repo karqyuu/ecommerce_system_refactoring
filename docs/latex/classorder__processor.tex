@@ -1,0 +1,61 @@
+\doxysection{order\+\_\+processor Class Reference}
+\hypertarget{classorder__processor}{}\label{classorder__processor}\index{order\_processor@{order\_processor}}
+
+
+Main class for coordinating the order processing workflow.  
+
+
+
+
+{\ttfamily \+\#include $<$order\+\_\+processor.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \doxymbox{\hyperlink{classorder__processor_a80a1d05f5050683a1bf23f370d33367f}{process\+\_\+order}} (const std::\+vector$<$ \doxymbox{\hyperlink{classitem}{item}} $>$ \&cart, const \doxymbox{\hyperlink{classdiscount__strategy}{discount\+\_\+strategy}} \texorpdfstring{$\ast$}{*}discount, const \doxymbox{\hyperlink{classpayment__strategy}{payment\+\_\+strategy}} \texorpdfstring{$\ast$}{*}payment)
+\begin{DoxyCompactList}\small\item\em Processes the order:\+ checks stock, applies the discount, and processes the payment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main class for coordinating the order processing workflow. 
+
+
+\begin{DoxyItemize}
+\item This class adheres to the Single Responsibility Principle (SRP). It does not contain hardcoded calculation or payment logic, but rather coordinates the interaction between the shopping cart and the injected strategies. 
+\end{DoxyItemize}
+
+\label{classorder__processor_doc-func-members}
+\Hypertarget{classorder__processor_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classorder__processor_a80a1d05f5050683a1bf23f370d33367f}\index{order\_processor@{order\_processor}!process\_order@{process\_order}}
+\index{process\_order@{process\_order}!order\_processor@{order\_processor}}
+\doxysubsubsection{\texorpdfstring{process\_order()}{process\_order()}}
+{\footnotesize\ttfamily \label{classorder__processor_a80a1d05f5050683a1bf23f370d33367f} 
+double order\+\_\+processor::\+process\+\_\+order (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ \doxymbox{\hyperlink{classitem}{item}} $>$ \&}]{cart}{, }\item[{const \doxymbox{\hyperlink{classdiscount__strategy}{discount\+\_\+strategy}} \texorpdfstring{$\ast$}{*}}]{discount}{, }\item[{const \doxymbox{\hyperlink{classpayment__strategy}{payment\+\_\+strategy}} \texorpdfstring{$\ast$}{*}}]{payment}{}\end{DoxyParamCaption})}
+
+
+
+Processes the order:\+ checks stock, applies the discount, and processes the payment. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em cart} & Collection (vector) of item objects the customer wishes to purchase. \\
+\hline
+{\em discount} & Pointer to a discount strategy object (nullptr is allowed). \\
+\hline
+{\em payment} & Pointer to a payment strategy object.\\
+\hline
+\end{DoxyParams}
+
+\item \begin{DoxyReturn}{Returns}
+Final order cost on success. Returns -\/1.\+0 if an item is out of stock or a payment error occurs. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+include/\+\doxymbox{\hyperlink{order__processor_8h}{order\+\_\+processor.\+h}}\item 
+src/\+\doxymbox{\hyperlink{order__processor_8cpp}{order\+\_\+processor.\+cpp}}\end{DoxyCompactItemize}
