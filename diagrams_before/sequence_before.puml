@@ -1,0 +1,17 @@
+@startuml sequence_before
+actor Client
+participant "processor : order_processor" as processor
+participant "cart : vector<item>" as cart
+
+Client -> processor : process_order(cart, "vip", "credit_card")
+activate processor
+
+processor -> cart : перевірка наявності (quantity)
+processor -> cart : підрахунок загальної суми (price * quantity)
+
+note over processor : Розрахунок знижки (захардкоджені if-else)
+note over processor : Обробка оплати (захардкоджені if-else)
+
+processor --> Client : фінальна сума (double)
+deactivate processor
+@enduml

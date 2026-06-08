@@ -1,0 +1,35 @@
+@startuml activity_before
+start
+:Отримати cart, customer_type, payment_method;
+
+:Перевірити наявність товарів у cart;
+if (quantity <= 0 для будь-якого товару?) then (так)
+  :Повернути помилку (-1.0);
+  stop
+else (ні)
+endif
+
+:Підрахувати загальну суму (total_amount);
+
+if (customer_type == "vip") then (так)
+  :Знижка 20%;
+elseif (customer_type == "student") then (так)
+  :Знижка 10%;
+elseif (customer_type == "regular" та сума > 1000) then (так)
+  :Знижка 5%;
+else (ні)
+  :Без знижок;
+endif
+
+:Розрахувати final_amount;
+
+if (payment_method == "credit_card" OR "paypal" OR "cash") then (так)
+  :Обробити платіж через ланцюжок if-else;
+  :Повернути final_amount;
+else (помилка)
+  :Повернути помилку (-1.0);
+  stop
+endif
+
+stop
+@enduml

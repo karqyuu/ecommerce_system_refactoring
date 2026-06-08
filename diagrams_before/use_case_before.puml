@@ -1,0 +1,18 @@
+@startuml use_case_before
+left to right direction
+actor "Клієнт (Customer)" as customer
+actor "Платіжна система (Payment Gateway)" as gateway
+
+package "E-commerce System (До рефакторингу)" {
+    usecase "Оформити замовлення" as process_order_uc
+    usecase "Перевірити наявність" as check_stock_uc
+    usecase "Розрахувати знижку" as calc_discount_uc
+    usecase "Провести оплату" as pay_uc
+}
+
+customer --> process_order_uc
+process_order_uc ..> check_stock_uc : <<include>>
+process_order_uc ..> calc_discount_uc : <<include>>
+process_order_uc ..> pay_uc : <<include>>
+pay_uc --> gateway
+@enduml

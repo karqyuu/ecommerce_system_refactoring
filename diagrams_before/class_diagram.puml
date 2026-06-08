@@ -1,0 +1,22 @@
+@startuml class_diagram
+skinparam classAttributeIconSize 0
+
+class item {
+    + name : string
+    + price : double
+    + quantity : int
+    + item(n: string, p: double, q: int)
+}
+
+class order_processor {
+    + process_order(cart: vector<item>, customer_type: string, payment_method: string) : double
+}
+
+order_processor ..> item : "uses"
+note right of order_processor
+  God Object: 
+  містить логіку перевірки наявності, 
+  розрахунку ціни, знижок та оплати.
+end note
+
+@enduml
