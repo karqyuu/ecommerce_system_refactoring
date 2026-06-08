@@ -1,0 +1,26 @@
+@startuml sequence_after
+actor Client
+participant "processor : order_processor" as processor
+participant "discount : discount_strategy" as discount
+participant "payment : payment_strategy" as payment
+
+Client -> processor : process_order(cart, discount, payment)
+activate processor
+
+processor -> processor : підрахунок total_amount
+
+processor -> discount : calculate_discount(total_amount)
+activate discount
+discount --> processor : повернути discount_amount
+deactivate discount
+
+processor -> processor : final_amount = total_amount - discount_amount
+
+processor -> payment : process_payment(final_amount)
+activate payment
+payment --> processor : повернути true (успіх)
+deactivate payment
+
+processor --> Client : повернути final_amount
+deactivate processor
+@enduml

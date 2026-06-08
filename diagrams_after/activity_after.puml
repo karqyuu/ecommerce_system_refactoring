@@ -1,0 +1,34 @@
+@startuml activity_after
+start
+:Отримати cart, об'єкти discount та payment;
+
+:Перевірити наявність товарів;
+if (quantity <= 0?) then (так)
+  :Повернути помилку (-1.0);
+  stop
+else (ні)
+  :Підрахувати total_amount;
+endif
+
+if (discount != nullptr) then (так)
+  :Делегувати розрахунок знижки об'єкту discount;
+else (ні)
+  :Знижка = 0;
+endif
+
+:Розрахувати final_amount;
+
+if (payment != nullptr) then (так)
+  :Делегувати проведення оплати об'єкту payment;
+  if (Оплата успішна?) then (так)
+    :Повернути final_amount;
+  else (ні)
+    :Повернути помилку (-1.0);
+    stop
+  endif
+else (ні)
+  :Повернути помилку (-1.0);
+  stop
+endif
+stop
+@enduml

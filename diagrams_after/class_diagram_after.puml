@@ -1,0 +1,68 @@
+@startuml class_diagram_after
+skinparam classAttributeIconSize 0
+
+class item 
+{
+    + name : string
+    + price : double
+    + quantity : int
+    + item(n: string, p: double, q: int)
+}
+
+interface discount_strategy 
+{
+    + {abstract} calculate_discount(total_amount: double) : double
+}
+
+class vip_discount 
+{
+    + calculate_discount(total_amount: double) : double
+}
+
+class student_discount 
+{
+    + calculate_discount(total_amount: double) : double
+}
+
+class regular_discount 
+{
+    + calculate_discount(total_amount: double) : double
+}
+
+discount_strategy <|.. vip_discount
+discount_strategy <|.. student_discount
+discount_strategy <|.. regular_discount
+
+interface payment_strategy 
+{
+    + {abstract} process_payment(amount: double) : bool
+}
+
+class credit_card_payment 
+{
+    + process_payment(amount: double) : bool
+}
+
+class paypal_payment 
+{
+    + process_payment(amount: double) : bool
+}
+
+class cash_payment 
+{
+    + process_payment(amount: double) : bool
+}
+
+payment_strategy <|.. credit_card_payment
+payment_strategy <|.. paypal_payment
+payment_strategy <|.. cash_payment
+
+class order_processor 
+{
+    + process_order(cart: vector<item>, discount: discount_strategy*, payment: payment_strategy*) : double
+}
+
+order_processor o--> discount_strategy : "delegates to"
+order_processor o--> payment_strategy : "delegates to"
+order_processor ..> item : "uses"
+@enduml
